@@ -1,0 +1,15 @@
+syntax = "proto3";
+package course;
+option go_package = "github.com/Zhoangp/Payment-Service/pb/course";
+import "pb/error.proto";
+
+service CourseService {
+  rpc Enrollment(EnrollmentRequest) returns (EnrollmentResponse);
+}
+message EnrollmentRequest {
+  string userId = 1;
+  string courseId = 2;
+}
+message EnrollmentResponse {
+  pb.ErrorResponse error = 1;
+}
